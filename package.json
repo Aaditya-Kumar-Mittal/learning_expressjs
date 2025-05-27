@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Aaditya-Kumar-Mittal/learning_expressjs#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
 }

@@ -1,0 +1,13 @@
+<%- include("./components/header.ejs") %>
+
+  <h1>Welcome to <%= title %> made using EJS</h1>
+
+  <label for="products">Products</label>
+
+  <ul>
+    <% products.forEach(product=> { %>
+      <li>
+        <%= product.name %> - <%= product.price %>
+      </li>
+      <% }) %>
+  </ul>
