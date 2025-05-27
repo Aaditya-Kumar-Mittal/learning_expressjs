@@ -1,0 +1,26 @@
+// Middlewares are functions that have access to the request object and the response object and the next Middleware function in the application's request and response cycle. 
+// Uses - Execute any code, make changes to the request and response object, end the request and response cycle, call the next middleware function in the stack.
+
+const express = require("express");
+
+// This creates an express application
+const app = express();
+
+const port = 5000;
+
+// Defining a middleware function
+
+const myMiddleware1 = (req, res, next) => {
+  console.log("Middleware 1 executed");
+  next(); // Call the next middleware or route handler
+};
+
+app.use(myMiddleware1); // Register the middleware globally, hence will work for all routes
+
+app.get("/", (req, res) => {
+  res.send("Hello from Aaditya Kumar Mittal!");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
