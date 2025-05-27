@@ -1,0 +1,22 @@
+const express = require("express");
+
+// This creates an express application
+const app = express();
+
+// Application level Setting
+app.set("view enginge", "ejs");
+
+// Routing
+app.get("/", (req, res) => {});
+
+app.post("api/data", (req, res) => {
+  res.json({
+    message: "Data received successfuly",
+    data: req.body,
+  });
+});
+
+// Creating and using middlewares
+app.use((error, req, res, next) => {
+  console.log(error.stack);
+});
